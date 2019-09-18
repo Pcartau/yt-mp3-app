@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
  
 const YD = new YoutubeMp3Downloader({
-    "ffmpegPath": "./FFmpeg/ffmpeg",        // Where is the FFmpeg binary located?
+    "ffmpegPath": "./vendor/ffmpeg",        // Where is the FFmpeg binary located?
     "outputPath": "./output",               // Where should the downloaded and encoded files be stored?
     "youtubeVideoQuality": "highest",       // What video quality should be used?
     "queueParallelism": 5,                  // How many parallel downloads/encodes should be started?
