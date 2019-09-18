@@ -1,0 +1,13 @@
+<html>
+  <head></head>
+  <body>
+    <input id='url' type="text">URL
+    <button id='download'>Download</button>
+    <script>
+      document.getElementById('download').addEventListener('click', () => {
+        const url = document.getElementById('url').value.split('=')[1];
+        location.href = `/getVideo-${url}`
+      })
+    </script>
+  </body>
+</html>
