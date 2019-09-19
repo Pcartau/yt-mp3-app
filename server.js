@@ -19,7 +19,6 @@ app.use(bodyParser.json());
 app.get('/getVideo-*', (req, res) => {
   ytdl.getInfo(req.url.substring(10), (err, info) => {
 	if (err) {
-		res.end();
 		return ;
 	}
     YD.download(req.url.split('=')[1] || req.url.split('/')[4], 'output.mp3');
