@@ -15,7 +15,7 @@ app.get('/getVideo-*', (req, res) => {
       quality: 'highestaudio',
     })
     proc = new ffmpeg({source:stream})
-    proc.setFfmpegPath('./vendor/ffmpeg');
+    proc.setFfmpegPath('./vendor/ffmpeg/ffmpeg');
     proc.saveToFile('./output.mp3')
     .on('end', () => {
       res.download('./output.mp3', `./${info.title}.mp3`);
