@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "express": "^4.17.1",
+    "fluent-ffmpeg": "^2.1.2",
     "youtube-mp3-downloader": "^0.6.3"
   },
   "devDependencies": {},
