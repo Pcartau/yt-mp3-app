@@ -1,8 +1,14 @@
 <html>
-  <head></head>
+  <head>
+    <link rel="stylesheet" href="/index.css">
+  </head>
   <body>
-    <input id='url' type="text">URL
-    <button id='download'>Download</button>
+    <div class='container'>
+      <input id='url' type="text" placeholder="URL">
+      <button id='download'>Download</button>
+      <h3 id='title'>Title</h3>
+      <h4 id='progress'>Progress</h3>
+    </div>
     <script>
       document.getElementById('download').addEventListener('click', () => {
         const url = document.getElementById('url').value;

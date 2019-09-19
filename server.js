@@ -15,6 +15,7 @@ const YD = new YoutubeMp3Downloader({
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(express.static('public'));
 
 app.get('/getVideo-*', (req, res) => {
   ytdl.getInfo(req.url.substring(10), (err, info) => {

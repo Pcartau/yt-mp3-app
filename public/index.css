@@ -1,0 +1,33 @@
+body {
+  background-color: black;
+  color: white;
+}
+.container {
+  width: 50vw;
+  height: 50vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+#download {
+  margin: auto;
+  width: 60%;
+  height: 50px;
+  border-radius: 10px;
+  margin-top: 10%;
+}
+#url {
+  font-size: 20px;
+  width: 80%;
+  border-radius: 5px;
+  margin: auto;
+  margin-bottom: 5%;
+}
+#title {
+  text-align: center;
+  font-size: 30px;
+}
+#progress {
+  text-align: center;
+  font-size: 20px;
+}
