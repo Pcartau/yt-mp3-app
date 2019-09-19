@@ -3,14 +3,7 @@ const port = process.env.PORT || 8080;
 const bodyParser = require('body-parser');
 const ytdl = require('ytdl-core');
 const YoutubeMp3Downloader = require("youtube-mp3-downloader");
-
-const YD = new YoutubeMp3Downloader({
-  "ffmpegPath": "./vendor/ffmpeg/ffmpeg",        // Where is the FFmpeg binary located?
-  "outputPath": "./",                     // Where should the downloaded and encoded files be stored?
-  "youtubeVideoQuality": "highest",       // What video quality should be used?
-  "queueParallelism": 2,                  // How many parallel downloads/encodes should be started?
-  "progressTimeout": 2000                 // How long should be the interval of the progress reports
-});
+const ffmpegPath = './vendor/ffmpeg/ffmpeg' //'../FFmpeg/ffmpeg'
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -18,6 +11,13 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 app.get('/getVideo-*', (req, res) => {
+  const YD = new YoutubeMp3Downloader({
+    "ffmpegPath": ffmpegPath,               // Where is the FFmpeg binary located?
+    "outputPath": "./",                     // Where should the downloaded and encoded files be stored?
+    "youtubeVideoQuality": "highest",       // What video quality should be used?
+    "queueParallelism": 2,                  // How many parallel downloads/encodes should be started?
+    "progressTimeout": 2000                 // How long should be the interval of the progress reports
+  });
   ytdl.getInfo(req.url.substring(10), (err, info) => {
 	if (err) {
 		return ;
